@@ -19,5 +19,5 @@ f2 = Favorite.create(user_id: u2.id, article_id: a2.id)
 f3 = Favorite.create(user_id: u3.id, article_id: a3.id)
 
 c1 = Comment.create(user_id: u1.id, article_id: a1.id, user_comment: "this article sucks")
-c2 = Comment.create(user_id: u2.id, article_id: a2.id, user_comment: "this article is great")
-c3 = Comment.create(user_id: u3.id, article_id: a3.id, user_comment: "this article is boring")
+c2 = Comment.create(user_id: u2.id, article_id: a1.id, user_comment: "this article is great")
+c3 = Comment.create(user_id: u3.id, article_id: a1.id, user_comment: "this article is boring")
