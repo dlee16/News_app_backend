@@ -1,5 +1,5 @@
 class ArticleSerializer < ActiveModel::Serializer
-  attributes :title, :description, :author, :published_date, :source, :likes, :category, :image
+  attributes :id, :title, :description, :author, :published_date, :source, :likes, :url, :image
   has_many :comments
   
 end
