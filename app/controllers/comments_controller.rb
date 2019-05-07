@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-      @comment = Comment.create(params[:id])
+      @comment = Comment.create(comment_params)
+      
        render json: @comment
   end
 
@@ -27,7 +28,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def user_params
+  def comment_params
       params.require(:comment).permit(:user_id, :article_id, :user_comment)
   end
 

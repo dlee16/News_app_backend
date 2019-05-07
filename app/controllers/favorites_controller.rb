@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-      @favorite = Favorite.create(params[:id])
+      @favorite = Favorite.create(favorites_params)
        render json: @favorite
   end
 
@@ -27,7 +27,7 @@ class FavoritesController < ApplicationController
 
   private
 
-  def user_params
+  def favorites_params
       params.require(:favorite).permit(:user_id, :article_id)
   end
 
