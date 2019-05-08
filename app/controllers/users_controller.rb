@@ -11,8 +11,19 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(params[:id])
-         render json: @user
+        user = User.new(
+            name: params[:name],
+            username: params[:username],
+            password: params[:password],
+        )
+
+        if user.save
+            token = encode_token(user.id)
+
+        render json: {user: UserSerializer.new(user), token: token}
+        else
+            render json: {errors: user.errors.full_messages}
+        end
     end
 
     def update
@@ -25,9 +36,9 @@ class UsersController < ApplicationController
         @user.destroy
     end
 
-    private
+    # private
 
-    def user_params
-        params.require(:user).permit(:name, :username, :password)
-    end
+    # def user_params
+    #     params.require(:user).permit(:name, :username, :password)
+    # end
 end
