@@ -17,6 +17,8 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rest-client'
+gem "jwt", "~> 2.1"
+gem 'dotenv-rails', groups: [:development, :test]
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
