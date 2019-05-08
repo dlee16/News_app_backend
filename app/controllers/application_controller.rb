@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::API
 
-    def encode_token(user_id)
-     JWT.encode({user_id: user_id}, "12345")
-    end
+  def encode_token(user_id)
+   JWT.encode({user_id: user_id}, "12345")
+  end
 
   def get_token
     request.headers["Authorization"]
